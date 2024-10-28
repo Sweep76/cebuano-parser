@@ -1424,7 +1424,7 @@ class SemanticAnalyzer(NodeVisitor):
 
     def visit_Word(self, node):
         if node.content is None:
-            return Node("Empty")
+            return Node("___")
         else:
             if type(node.content) == str:
                 return Node(node.type+"->"+node.content)
@@ -1432,7 +1432,7 @@ class SemanticAnalyzer(NodeVisitor):
                 return Node(node.type+"->"+str(node.content.value))
 
     def visit_NoneType (self, node):
-        return Node("Empty")
+        return Node("___")
        
     
 def main():
